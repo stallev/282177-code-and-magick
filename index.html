@@ -32,21 +32,20 @@
 </footer>
 <script>
   var fireballSize = 40;
-  var left=true;
-  var getFireballSpeed = calcFireballSpeed(left);
+  var getFireballSpeed = calcFireballSpeed();
   var wizardSpeed = 3;
-  var WizardWidth = 170;
-  var WizardHeight = calcWizardHeight(WizardWidth);
+  var wizardWidth = 170;
+  var getWizardHeight=calcWizardHeight();
   function calcFireballSpeed(direction){
-    return movingLeft ? 2 : 2;
+    return movingLeft ? 2 : 10;
   function calcWizardHeight(width){
     return width*1.377;
   }  
   function getWizardX(width){
-    return width/2;
+    return window.width/2;
   }
   function getWizardY(height){
-    return height/3;
+    return window.height/3;
   }
 </script>
 <script src="js/game.js" type="application/javascript"></script>
