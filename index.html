@@ -31,21 +31,21 @@
                                                               width="130">Сделано в HTML Academy</a>в 2017 году</p>
 </footer>
 <script>
-  var fireballSize = 40;
-  var getFireballSpeed = calcFireballSpeed();
+  var fireballSize = 22;
   var wizardSpeed = 3;
   var wizardWidth = 170;
-  var getWizardHeight=calcWizardHeight();
-  function calcFireballSpeed(direction){
-    return movingLeft ? 2 : 10;
-  function calcWizardHeight(width){
-    return width*1.377;
+
+  var getFireballSpeed=function (left){
+    return left ? 2 : 10;
+
+  var getWizardHeight = function(wizardWidth){
+    return wizardWidth*1.377;
   }  
   function getWizardX(width){
-    return window.width/2;
+    return width/2;
   }
   function getWizardY(height){
-    return window.height/3;
+    return height*2/3;
   }
 </script>
 <script src="js/game.js" type="application/javascript"></script>
