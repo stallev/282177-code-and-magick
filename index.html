@@ -16,9 +16,13 @@
   <h1 class="header-title section-title">
     Code
     <img>
+  <h1 class="header-title section-title">
+    Code&thinsp;and&thinsp;Pleasure
+    <img src="img/title-site.png" alt="Code and magick">
   </h1>
-  <p class="header-description">
-    
+   <p class="header-description">
+    Это игра, где главного героя, которым вам предстоит управлять и изменять окружающий мир зовут
+    Пендальф Синий.
     Вместе с ним вас ждет увлекательное приключение&hellip;
   </p>
 
@@ -33,19 +37,19 @@
 <script>
   var fireballSize = 22;
   var wizardSpeed = 3;
-  var wizardWidth = 170;
+  var wizardWidth = 70;
 
-  var getFireballSpeed=function (left){
+  var getFireballSpeed = function (left){
     return left ? 2 : 10;
-
-  var getWizardHeight = function(wizardWidth){
-    return wizardWidth*1.377;
+  }
+  var getWizardHeight = function(){
+    return wizardWidth * 1.377;
   }  
   function getWizardX(width){
-    return width/2;
+    return (width - wizardWidth)/2;
   }
   function getWizardY(height){
-    return height*2/3;
+    return (height * 1 / 3 - wizardWidth * 1.377);
   }
 </script>
 <script src="js/game.js" type="application/javascript"></script>
