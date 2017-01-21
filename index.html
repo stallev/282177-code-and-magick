@@ -39,17 +39,24 @@
   var wizardSpeed = 3;
   var wizardWidth = 70;
 
+  //вычисление скорости полета firebolls
   var getFireballSpeed = function (left){
-    return left ? 2 : 10;
-  }
+    return left ? 2 : 5;
+  };
+
+  //вычисление высоты персонажа
   var getWizardHeight = function(){
-    return wizardWidth * 1.377;
-  }  
+    return wizardWidth * 1.337;
+  };  
+
+  //центровка персонажа по горизонтали
   function getWizardX(width){
     return (width - wizardWidth) / 2;
   }
+
+  //расстояние персонажа от верхней поверхности
   function getWizardY(height){
-    return (height * 1 / 3 - wizardWidth * 1.377);
+    return (height * 1 / 3 - getWizardHeight());
   }
 </script>
 <script src="js/game.js" type="application/javascript"></script>
