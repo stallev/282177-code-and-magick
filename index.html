@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Mono&subset=latin,cyrillic">
   <link rel="stylesheet" href="css/main.css">
-  <title>Код и Магия</title>
+  <title>Код </title>
 </head>
 <body>
 
@@ -14,11 +14,14 @@
   <div class="header-tree"></div>
 
   <h1 class="header-title section-title">
-    Code&thinsp;and&thinsp;Magick
+    Code
+    <img>
+  <h1 class="header-title section-title">
+    Code&thinsp;and&thinsp;Pleasure
     <img src="img/title-site.png" alt="Code and magick">
   </h1>
-  <p class="header-description">
-    Это игра, где главного героя, которым вам предстоит управлять и изменять заклинаниями окружающий мир зовут
+   <p class="header-description">
+    Это игра, где главного героя, которым вам предстоит управлять и изменять окружающий мир зовут
     Пендальф Синий.
     Вместе с ним вас ждет увлекательное приключение&hellip;
   </p>
@@ -31,7 +34,31 @@
   <p><a href="http://htmlacademy.ru" class="footer-link"><img src="img/htmlacademy-logo.png" alt="HTML Academy"
                                                               width="130">Сделано в HTML Academy</a>в 2017 году</p>
 </footer>
+<script>
+  var fireballSize = 22;
+  var wizardSpeed = 3;
+  var wizardWidth = 70;
 
+  //вычисление скорости полета firebolls
+  var getFireballSpeed = function (left){
+    return left ? 5 : 2;
+  };
+
+  //вычисление высоты персонажа
+  var getWizardHeight = function(){
+    return wizardWidth * 1.337;
+  };  
+
+  //центровка персонажа по горизонтали
+  function getWizardX(width){
+    return (width - wizardWidth) / 2;
+  }
+
+  //расстояние персонажа от верхней поверхности
+  function getWizardY(height){
+    return height / 3;
+  }
+</script>
 <script src="js/game.js" type="application/javascript"></script>
 
 </body>
