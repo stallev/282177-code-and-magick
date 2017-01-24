@@ -1,6 +1,6 @@
 'use strict()';
 window.renderStatistics = function(ctx, names, times){
-  ctx.rotate(80 * Math.PI/180);
+
   ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
   ctx.fillRect(20, 20, 420, 270);
 
@@ -22,6 +22,7 @@ window.renderStatistics = function(ctx, names, times){
   var histX = 60;
   var columnWidth = 40;
   var columnIndent = 50;
+  var diffOpacity = (Math.random() % 10) / 10;
   var myColumnColor = 'rgba(255, 0, 0, 1)';
   var otherColumnColor = 'rgba(0, 0, 255, 1)';
   var step = histHeight / maxTime;
@@ -31,13 +32,19 @@ window.renderStatistics = function(ctx, names, times){
     var time = times[i];
     var columnHeight = step * time;
 
-    ctx.fillRect(histX + i * (columnIndent + columnWidth), 80, columnWidth, columnHeight);
+    ctx.fillText(time, histX + i * (columnIndent + columnWidth), 60);
+
     if(names[i] == 'Вы'){
       ctx.fillStyle = myColumnColor;
     }
     else
       ctx.fillStyle = otherColumnColor;
-    ctx.fillText(names[i], histX + i * (columnIndent + columnWidth), 60);
+
+    ctx.fillRect(histX + i * (columnIndent + columnWidth), 80 + (histHeight-columnHeight), columnWidth, columnHeight);
+
+    ctx.fillStyle = '#000';
+
+    ctx.fillText(names[i], histX + i * (columnIndent + columnWidth), 120 + histHeight);
   }
 
 };
