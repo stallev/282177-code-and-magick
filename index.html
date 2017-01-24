@@ -25,16 +25,19 @@
     Пендальф Синий.
     Вместе с ним вас ждет увлекательное приключение&hellip;
   </p>
-
+  <div class="statistics">
+    <canvas width="420" height="270"></canvas>
+  </div>
   <div class="demo"></div>
 </header>
-
 
 <footer>
   <p><a href="http://htmlacademy.ru" class="footer-link"><img src="img/htmlacademy-logo.png" alt="HTML Academy"
                                                               width="130">Сделано в HTML Academy</a>в 2017 году</p>
 </footer>
-<script>
+<!--<script>
+  'use strict';
+
   var fireballSize = 22;
   var wizardSpeed = 3;
   var wizardWidth = 70;
@@ -47,7 +50,7 @@
   //вычисление высоты персонажа
   var getWizardHeight = function(){
     return wizardWidth * 1.337;
-  };  
+  };
 
   //центровка персонажа по горизонтали
   function getWizardX(width){
@@ -58,7 +61,8 @@
   function getWizardY(height){
     return height / 3;
   }
-</script>
+</script>-->
+<script src="js/stat.js" type="application/javascript"></script>
 <script src="js/game.js" type="application/javascript"></script>
 
 </body>
