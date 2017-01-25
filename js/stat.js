@@ -1,6 +1,7 @@
 'use strict';
-var canvas = document.querySelector('canvas');
+
 window.renderStatistics = function (ctx, names, times) {
+
 
   // рисуем тень
   ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
@@ -13,8 +14,8 @@ window.renderStatistics = function (ctx, names, times) {
   // выводим текст шапки облака
   ctx.fillStyle = '#000';
   ctx.font = '16px PT Mono';
-  ctx.fillText('Ура вы победили!', 50, 20);
-  ctx.fillText('Список результатов: ', 50, 40);
+  ctx.fillText('Ура, вы победили!', 50, 30);
+  ctx.fillText('Список результатов: ', 50, 50);
 
   var maxTime = -1;
   for (var z = 0; z < times.length; z++) {
@@ -35,7 +36,7 @@ window.renderStatistics = function (ctx, names, times) {
     var columnHeight = step * time;
 
     // выводим результаты игроков
-    ctx.fillText(time, histX + i * (columnIndent + columnWidth), 60);
+    ctx.fillText(time.toFixed(0), histX + i * (columnIndent + columnWidth), 70 + (histHeight - columnHeight));
 
     if (name === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
@@ -51,6 +52,3 @@ window.renderStatistics = function (ctx, names, times) {
   }
 
 };
-
-//window.renderStatistics(canvas.getContext('2d'), ['Иван', 'Сергей', 'Вы'], [20.32, 40.11, 30.18]);
-
