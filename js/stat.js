@@ -17,7 +17,7 @@ window.renderStatistics = function (ctx, names, times) {
   ctx.fillText('Список результатов: ', 50, 40);
 
   var maxTime = -1;
-  for (var z = 0; i < times.length; z++) {
+  for (var z = 0; z < times.length; z++) {
     if (times[z] > maxTime) {
       maxTime = times[z];
     }
