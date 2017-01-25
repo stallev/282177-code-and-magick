@@ -1,5 +1,5 @@
 'use strict';
-
+var canvas = document.querySelector('canvas');
 window.renderStatistics = function (ctx, names, times) {
 
   // рисуем тень
@@ -27,7 +27,6 @@ window.renderStatistics = function (ctx, names, times) {
   var histX = 60;// отступ слева для гистограммы
   var columnWidth = 40;// ширина колонки гистограммы
   var columnIndent = 50;// интервал между колонками
-  var myColumnColor = 'rgba(255, 0, 0, 1)';// цвет колонки текущего игрока
   var step = histHeight / maxTime;
 
   for (var i = 0; i < times.length; i++) {
@@ -38,20 +37,20 @@ window.renderStatistics = function (ctx, names, times) {
     // выводим результаты игроков
     ctx.fillText(time, histX + i * (columnIndent + columnWidth), 60);
 
-    if (names[i] === 'Вы') {
-      ctx.fillStyle = myColumnColor;
+    if (name === 'Вы') {
+      ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     } else {
-      ctx.fillStyle = 'rgba(0, 0, 255, (Math.random() % 10 / 10))';
+      ctx.fillStyle = 'rgb(0, 0, ' + (Math.random() * 255).toFixed(0) + ')';
     }
     // вывод столбцов гистограммы
     ctx.fillRect(histX + i * (columnIndent + columnWidth), 80 + (histHeight - columnHeight), columnWidth, columnHeight);
 
     ctx.fillStyle = '#000';
     // вывод подписей к столбцам
-    ctx.fillText(name, histX + i * (columnIndent + columnWidth), 120 + histHeight);
+    ctx.fillText(name, histX + i * (columnIndent + columnWidth), 100 + histHeight);
   }
 
 };
 
-var canvas = document.querySelector('canvas');
+//window.renderStatistics(canvas.getContext('2d'), ['Иван', 'Сергей', 'Вы'], [20.32, 40.11, 30.18]);
 
