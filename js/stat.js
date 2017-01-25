@@ -53,5 +53,5 @@ window.renderStatistics = function (ctx, names, times) {
 
 };
 
-var canvas = document.querySelector('.statistics canvas');
-window.renderStatistics(canvas.getContext('2d'), ['Иван', 'Сергей', 'Вы'], [20.32, 40.11, 30.18]);
+var canvas = document.querySelector('canvas');
+
