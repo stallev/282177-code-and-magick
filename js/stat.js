@@ -2,9 +2,16 @@
 
 window.renderStatistics = function (ctx, names, times) {
   var histHeight = 150;// высота гистограммы
-  var histX = 100;// отступ слева для гистограммы
+  var histX = 140;// отступ слева для гистограммы
   var columnWidth = 40;// ширина колонки гистограммы
   var columnIndent = 50;// интервал между колонками
+  // вычисление масштаба
+  var maxTime = -1;
+  for (var z = 0; z < times.length; z++) {
+    if (times[z] > maxTime) {
+      maxTime = times[z];
+    }
+  }
   var step = histHeight / maxTime;
   // рисуем тень
   ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
@@ -17,12 +24,6 @@ window.renderStatistics = function (ctx, names, times) {
   ctx.font = '16px PT Mono';
   ctx.fillText('Ура, вы победили!', histX, 30);
   ctx.fillText('Список результатов: ', histX, 50);
-  var maxTime = -1;
-  for (var z = 0; z < times.length; z++) {
-    if (times[z] > maxTime) {
-      maxTime = times[z];
-    }
-  }
   for (var i = 0; i < times.length; i++) {
     var name = names[i];
     var time = times[i];
