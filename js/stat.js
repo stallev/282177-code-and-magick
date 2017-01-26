@@ -1,10 +1,6 @@
 'use strict';
 
 window.renderStatistics = function (ctx, names, times) {
-  var histHeight = 150;// высота гистограммы
-  var histX = 140;// отступ слева для гистограммы
-  var columnWidth = 40;// ширина колонки гистограммы
-  var columnIndent = 50;// интервал между колонками
   // вычисление масштаба
   var maxTime = -1;
   for (var z = 0; z < times.length; z++) {
@@ -12,6 +8,10 @@ window.renderStatistics = function (ctx, names, times) {
       maxTime = times[z];
     }
   }
+  var histHeight = 150;// высота гистограммы
+  var histX = 160;// отступ слева для гистограммы
+  var columnWidth = 40;// ширина колонки гистограммы
+  var columnIndent = 50;// интервал между колонками
   var step = histHeight / maxTime;
   // рисуем тень
   ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
