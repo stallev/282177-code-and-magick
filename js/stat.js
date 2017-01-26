@@ -5,11 +5,11 @@ window.renderStatistics = function (ctx, names, times) {
 
   // рисуем тень
   ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
-  ctx.fillRect(20, 20, 420, 270);
+  ctx.fillRect(110, 20, 420, 270);
 
   // рисуем облако
   ctx.fillStyle = 'rgba(255, 255, 255, 1)';
-  ctx.fillRect(10, 10, 420, 270);
+  ctx.fillRect(100, 10, 420, 270);
 
   // выводим текст шапки облака
   ctx.fillStyle = '#000';
