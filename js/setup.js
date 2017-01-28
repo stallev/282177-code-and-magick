@@ -3,12 +3,14 @@
 var openSetupWindow = document.querySelector('.setup-open');
 var setup = document.querySelector('.setup');
 var closeSetupWindow = document.querySelector('.setup-close');
+
 // одежда
 var wizardCoat = document.getElementById('wizard-coat');
 // глаза
 var wizardEyes = document.getElementById('wizard-eyes');
 // мячик
 var wizardFireboll = document.querySelector('.setup-fireball-wrap');
+
 // массив значений цвета одежды
 var colorWizardCoat = [
   'rgb(101, 137, 164)',
@@ -31,6 +33,7 @@ var colorWizardFireboll = [
   '#5ce6c0',
   '#e848d5',
   '#e6e848'];
+
 // обработчик клика на аватарку
 openSetupWindow.addEventListener('click', function () {
   setup.classList.remove('invisible');
