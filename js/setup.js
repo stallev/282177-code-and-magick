@@ -59,10 +59,10 @@ openSetupWindow.addEventListener('click', function () {
 // обработчик клика на аватаркус клавиатуры
 openSetupWindow.addEventListener('keydown', function (evt) {
   if (isActivateEvent(evt)) {
-    openSetupWindow.setAttribute('area-pressed', 'true');
+    openSetupWindow.setAttribute('aria-pressed', 'true');
     setup.classList.remove('invisible');
     hideSetupElement(evt);
-    openSetupWindow.setAttribute('area-pressed', 'false');
+    openSetupWindow.setAttribute('aria-pressed', 'false');
   }
 });
 // обработчик клика на кнопку "Закрыть"
@@ -72,9 +72,9 @@ closeSetupWindow.addEventListener('click', function () {
 // обработчик клика на кнопку "Закрыть" с клавиатуры
 closeSetupWindow.addEventListener('keydown', function (evt) {
   if (isActivateEvent(evt)) {
-    closeSetupWindow.setAttribute('area-pressed', 'true');
+    closeSetupWindow.setAttribute('aria-pressed', 'true');
     setup.classList.add('invisible');
-    closeSetupWindow.setAttribute('area-pressed', 'false');
+    closeSetupWindow.setAttribute('aria-pressed', 'false');
   }
 });
 // обработчик клика на одежду
@@ -84,9 +84,9 @@ wizardCoat.addEventListener('click', function () {
 // обработчик клика на одежду с клавиатуры
 wizardCoat.addEventListener('keydown', function (evt) {
   if (isActivateEvent(evt)) {
-    wizardCoat.setAttribute('area-pressed', 'true');
+    wizardCoat.setAttribute('aria-pressed', 'true');
     wizardCoat.style.fill = colorWizardCoat[(Math.random() * colorWizardCoat.length).toFixed(0)];
-    wizardCoat.setAttribute('area-pressed', 'false');
+    wizardCoat.setAttribute('aria-pressed', 'false');
   }
 });
 // обработчик клика на глаза
@@ -96,9 +96,9 @@ wizardEyes.addEventListener('click', function () {
 // обработчик клика на глаза с клавиатуры
 wizardEyes.addEventListener('keydown', function (evt) {
   if (isActivateEvent(evt)) {
-    wizardEyes.setAttribute('area-pressed', 'true');
+    wizardEyes.setAttribute('aria-pressed', 'true');
     wizardEyes.style.fill = colorWizardEyes[(Math.random() * colorWizardEyes.length).toFixed(0)];
-    wizardEyes.setAttribute('area-pressed', 'false');
+    wizardEyes.setAttribute('aria-pressed', 'false');
   }
 });
 // обработчик клика на мячик
@@ -108,8 +108,8 @@ wizardFireboll.addEventListener('click', function () {
 // обработчик клика на мячик с клавиатуры
 wizardFireboll.addEventListener('keydown', function (evt) {
   if (isActivateEvent(evt)) {
-    wizardFireboll.setAttribute('area-pressed', 'true');
+    wizardFireboll.setAttribute('aria-pressed', 'true');
     wizardFireboll.style.backgroundColor = colorWizardFireboll[(Math.random() * colorWizardFireboll.length).toFixed(0)];
-    wizardFireboll.setAttribute('area-pressed', 'false');
+    wizardFireboll.setAttribute('aria-pressed', 'false');
   }
 });
