@@ -16,7 +16,7 @@ var wizardFireboll = document.querySelector('.setup-fireball-wrap');
 var ENTER_KEY_CODE = 13;
 var ESC_KEY_CODE = 27;
 
-var isActivateEvent = function (evt) {
+var isActivateEvent = function f(evt) {
   return evt.keyCode && evt.keyCode === ENTER_KEY_CODE;
 };
 
@@ -56,60 +56,68 @@ openSetupWindow.addEventListener('click', function () {
   setup.classList.remove('invisible');
   hideSetupElement();
 });
+
 // обработчик клика на аватаркус клавиатуры
 openSetupWindow.addEventListener('keydown', function (evt) {
   if (isActivateEvent(evt)) {
-    openSetupWindow.setAttribute('aria-pressed', 'true');
     setup.classList.remove('invisible');
     hideSetupElement(evt);
-    openSetupWindow.setAttribute('aria-pressed', 'false');
   }
 });
+
 // обработчик клика на кнопку "Закрыть"
 closeSetupWindow.addEventListener('click', function () {
   setup.classList.add('invisible');
 });
+
 // обработчик клика на кнопку "Закрыть" с клавиатуры
 closeSetupWindow.addEventListener('keydown', function (evt) {
   if (isActivateEvent(evt)) {
-    closeSetupWindow.setAttribute('aria-pressed', 'true');
     setup.classList.add('invisible');
-    closeSetupWindow.setAttribute('aria-pressed', 'false');
   }
 });
+
 // обработчик клика на одежду
 wizardCoat.addEventListener('click', function () {
   wizardCoat.style.fill = colorWizardCoat[(Math.random() * colorWizardCoat.length).toFixed(0)];
 });
+
 // обработчик клика на одежду с клавиатуры
 wizardCoat.addEventListener('keydown', function (evt) {
   if (isActivateEvent(evt)) {
-    wizardCoat.setAttribute('aria-pressed', 'true');
     wizardCoat.style.fill = colorWizardCoat[(Math.random() * colorWizardCoat.length).toFixed(0)];
-    wizardCoat.setAttribute('aria-pressed', 'false');
+    tooglingAria(wizardCoat);
   }
 });
+
 // обработчик клика на глаза
 wizardEyes.addEventListener('click', function () {
   wizardEyes.style.fill = colorWizardEyes[(Math.random() * colorWizardEyes.length).toFixed(0)];
 });
+
 // обработчик клика на глаза с клавиатуры
 wizardEyes.addEventListener('keydown', function (evt) {
   if (isActivateEvent(evt)) {
-    wizardEyes.setAttribute('aria-pressed', 'true');
     wizardEyes.style.fill = colorWizardEyes[(Math.random() * colorWizardEyes.length).toFixed(0)];
-    wizardEyes.setAttribute('aria-pressed', 'false');
+    tooglingAria(wizardEyes);
   }
 });
+
 // обработчик клика на мячик
 wizardFireboll.addEventListener('click', function () {
   wizardFireboll.style.backgroundColor = colorWizardFireboll[(Math.random() * colorWizardFireboll.length).toFixed(0)];
 });
+
 // обработчик клика на мячик с клавиатуры
 wizardFireboll.addEventListener('keydown', function (evt) {
   if (isActivateEvent(evt)) {
-    wizardFireboll.setAttribute('aria-pressed', 'true');
     wizardFireboll.style.backgroundColor = colorWizardFireboll[(Math.random() * colorWizardFireboll.length).toFixed(0)];
-    wizardFireboll.setAttribute('aria-pressed', 'false');
+    tooglingAria(wizardFireboll);
   }
 });
+
+// toogling aria-checked
+function tooglingAria(label) {
+  var pressed = (label.getAttribute('aria-pressed' === 'true'));
+  label.setAttribute('aria-pressed', !pressed);
+}
