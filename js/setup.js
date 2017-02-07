@@ -16,11 +16,11 @@ var wizardFireboll = document.querySelector('.setup-fireball-wrap');
 var ENTER_KEY_CODE = 13;
 var ESC_KEY_CODE = 27;
 
-var isActivateEvent = function f(evt) {
+function isActivateEvent(evt) {
   return evt.keyCode && evt.keyCode === ENTER_KEY_CODE;
 };
 
-var hideSetupElement = function () {
+function hideSetupElement() {
   document.addEventListener('keydown', function (evt) {
     if (evt.keyCode && evt.keyCode === ESC_KEY_CODE) {
       setupOverlay.classList.add('invisible');
