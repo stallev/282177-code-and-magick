@@ -18,7 +18,7 @@ var ESC_KEY_CODE = 27;
 
 function isActivateEvent(evt) {
   return evt.keyCode && evt.keyCode === ENTER_KEY_CODE;
-};
+}
 
 function hideSetupElement() {
   document.addEventListener('keydown', function (evt) {
@@ -26,7 +26,7 @@ function hideSetupElement() {
       setupOverlay.classList.add('invisible');
     }
   });
-};
+}
 
 // массив значений цвета одежды
 var colorWizardCoat = [
@@ -118,6 +118,6 @@ wizardFireboll.addEventListener('keydown', function (evt) {
 
 // toogling aria-checked
 function tooglingAria(label) {
-  var pressed = (label.getAttribute('aria-pressed' === 'true'));
+  var pressed = (label.getAttribute('aria-pressed') === 'true');
   label.setAttribute('aria-pressed', !pressed);
 }
