@@ -33,24 +33,20 @@ var colorWizardFireboll = [
   '#e848d5',
   '#e6e848'];
 
-openSetup.addEventListener('click', open);
-openSetup.addEventListener('keydown', openByEnter);
-closeSetup.addEventListener('click', close);
-closeSetup.addEventListener('keydown', closeByEsc);
-wizardCoat.addEventListener('click', getWizardCoatColor);
-wizardCoat.addEventListener('keydown', getWizardCoatColorByEnter);
-wizardEyes.addEventListener('click', getWizardEyesColor);
-wizardEyes.addEventListener('keydown', getWizardEyesColorByEnter);
-wizardFireboll.addEventListener('click', getWizardFirebollColor);
-wizardFireboll.addEventListener('keydown', getWizardFirebollColorByEnter);
-document.addEventListener('keydown', hideSetupElement);
+openSetup.addEventListener('click', onOpen);
+openSetup.addEventListener('keydown', onOpenByEnter);
+closeSetup.addEventListener('click', onClose);
+closeSetup.addEventListener('keydown', onCloseByEnter);
+wizardCoat.addEventListener('click', onGetWizardCoatColor);
+wizardCoat.addEventListener('keydown', onGetWizardCoatColorByEnter);
+wizardEyes.addEventListener('click', onGetWizardEyesColor);
+wizardEyes.addEventListener('keydown', onGetWizardEyesColorByEnter);
+wizardFireboll.addEventListener('click', onGetWizardFirebollColor);
+wizardFireboll.addEventListener('keydown', onGetWizardFirebollColorByEnter);
 
-function togglingAria(label) {
-  var pressed = (label.getAttribute('aria-pressed') === 'true');
-  label.setAttribute('aria-pressed', !pressed);
-}
+document.addEventListener('keydown', onCloseByEsc);
 
-function isActivateEvent(evt) {
+function isEnterEvent(evt) {
   return evt.keyCode && evt.keyCode === ENTER_KEY_CODE;
 }
 
@@ -58,25 +54,31 @@ function isEscapeEvent(evt) {
   return evt.keyCode && evt.keyCode === ESC_KEY_CODE;
 }
 
-function hideSetupElement(evt) {
-  if (isEscapeEvent) {
+function onCloseByEsc(evt) {
+  if (isEscapeEvent(evt)) {
     setupOverlay.classList.add('invisible');
   }
 }
 
-function closeByEsc(evt) {
-  if (isActivateEvent(evt)) {
+function onClose() {
+  close();
+}
+
+function onCloseByEnter(evt) {
+  if (isEnterEvent(evt)) {
     close();
   }
 }
-
+function onOpen() {
+  open();
+}
 function open() {
   setup.classList.remove('invisible');
   openSetup.setAttribute('aria-pressed', 'true');
 }
 
-function openByEnter(evt) {
-  if (isActivateEvent(evt)) {
+function onOpenByEnter(evt) {
+  if (isEnterEvent(evt)) {
     open();
   }
 }
@@ -91,34 +93,32 @@ function getRandomColor(element, property, array) {
   element.style[property] = color;
 }
 
-function getWizardCoatColor() {
+function onGetWizardCoatColor() {
   getRandomColor(wizardCoat, 'fill', colorWizardCoat);
 }
 
-function getWizardCoatColorByEnter(evt) {
-  if (isActivateEvent(evt)) {
+function onGetWizardCoatColorByEnter(evt) {
+  if (isEnterEvent(evt)) {
     getRandomColor(wizardCoat, 'fill', colorWizardCoat);
-    togglingAria(wizardCoat);
   }
 }
 
-function getWizardEyesColor() {
+function onGetWizardEyesColor() {
   getRandomColor(wizardEyes, 'fill', colorWizardEyes);
 }
-function getWizardEyesColorByEnter(evt) {
-  if (isActivateEvent(evt)) {
+
+function onGetWizardEyesColorByEnter(evt) {
+  if (isEnterEvent(evt)) {
     getRandomColor(wizardEyes, 'fill', colorWizardEyes);
-    togglingAria(wizardEyes);
   }
 }
 
-function getWizardFirebollColor() {
+function onGetWizardFirebollColor() {
   getRandomColor(wizardFireboll, 'backgroundColor', colorWizardFireboll);
 }
 
-function getWizardFirebollColorByEnter(evt) {
-  if (isActivateEvent(evt)) {
+function onGetWizardFirebollColorByEnter(evt) {
+  if (isEnterEvent(evt)) {
     getRandomColor(wizardFireboll, 'backgroundColor', colorWizardFireboll);
-    togglingAria(wizardFireboll);
   }
 }
