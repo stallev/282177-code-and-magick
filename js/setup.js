@@ -3,7 +3,6 @@
 var openSetup = document.querySelector('.setup-open');
 var setup = document.querySelector('.setup');
 var closeSetup = document.querySelector('.setup-close');
-var setupOverlay = document.querySelector('.overlay');
 var wizardCoat = document.getElementById('wizard-coat');
 var wizardEyes = document.getElementById('wizard-eyes');
 var wizardFireboll = document.querySelector('.setup-fireball-wrap');
@@ -56,7 +55,7 @@ function isEscapeEvent(evt) {
 
 function onCloseByEsc(evt) {
   if (isEscapeEvent(evt)) {
-    setupOverlay.classList.add('invisible');
+    close();
   }
 }
 
@@ -72,6 +71,7 @@ function onCloseByEnter(evt) {
 function onOpen() {
   open();
 }
+
 function open() {
   setup.classList.remove('invisible');
   openSetup.setAttribute('aria-pressed', 'true');
